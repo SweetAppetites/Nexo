@@ -1,0 +1,47 @@
+// 测试变量作用域和文件读写功能
+
+// 全局变量
+global_var = "我是全局变量"
+
+// 测试函数私有变量
+fc test_func() {
+    // 函数私有变量
+    private_var = "我是私有变量"
+    private_array = {1, 2, 3, 4, 5}
+    
+    ehco("在函数内部访问私有变量:", private_var)
+    ehco("在函数内部访问全局变量:", global_var)
+    
+    rt "函数执行完成"
+}
+
+// 主函数
+fc mn() {
+    ehco("--- 测试变量作用域 ---")
+    
+    // 调用函数
+    result = test_func()
+    ehco("函数返回值:", result)
+    
+    // 测试函数名.变量名访问方式
+    ehco("通过函数名.变量名访问私有变量:", test_func.private_var)
+    ehco("通过函数名.变量名访问私有数组:", test_func.private_array)
+    
+    // 测试数组操作
+    test_func.private_array.add(6, 7, 8)
+    ehco("修改后的私有数组:", test_func.private_array)
+    
+    ehco("\n--- 测试文件读写功能 ---")
+    
+    // 测试文件写入（使用新的wr函数）
+    test_content = "测试文件内容\n全局变量: " + global_var + "\n私有变量: " + test_func.private_var
+    wr("test_scope.txt", test_content)
+    ehco("文件写入成功")
+    
+    // 测试文件读取（使用新的ct函数）
+    read_content = ct("test_scope.txt")
+    ehco("文件内容:")
+    ehco(read_content)
+    
+    ehco("\n--- 所有测试完成 ---")
+}

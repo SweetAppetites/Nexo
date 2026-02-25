@@ -1,0 +1,45 @@
+fc mn() {
+    // 测试字符串操作函数
+    ehco("=== 测试字符串操作函数 ===")
+    
+    // 测试字符串
+    test_str = "Hello, MOFLang! 你好，MOFLang！"
+    
+    // 测试len函数（已有）
+    ehco("原始字符串: ", test_str)
+    ehco("字符串长度: ", len(test_str))
+    
+    // 测试sub函数
+    ehco("sub(7, 7): ", sub(test_str, 7, 7))
+    
+    // 测试slice函数
+    ehco("slice(7, 14): ", slice(test_str, 7, 14))
+    ehco("slice(-7): ", slice(test_str, -7))
+    
+    // 测试index函数
+    ehco("index('MOFLang'): ", index(test_str, "MOFLang"))
+    ehco("index('不存在'): ", index(test_str, "不存在"))
+    
+    // 测试rep函数
+    ehco("rep('MOFLang', 'World'): ", rep(test_str, "MOFLang", "World"))
+    
+    // 测试up函数
+    ehco("up(): ", up(test_str))
+    
+    // 测试low函数
+    ehco("low(): ", low(test_str))
+    
+    // 测试trim函数
+    test_trim = "   前后有空格   "
+    ehco("trim(): ", "[" + trim(test_trim) + "]")
+    
+    // 测试spl函数
+    test_split = "apple,banana,cherry"
+    split_result = spl(test_split, ",")
+    ehco("spl(','): ", split_result)
+    
+    // 测试join函数
+    ehco("join('-'): ", join(split_result, "-"))
+    
+    ehco("=== 字符串操作测试完成 ===")
+}

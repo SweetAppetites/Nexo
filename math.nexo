@@ -1,0 +1,21 @@
+// 计算阶乘的递归函数
+fc fact(n) {
+    if (n <= 1) {
+        rt 1
+    } el {
+        // 递归调用自身
+        prev = fact(n - 1)
+        rt n * prev
+    }
+}
+
+// 斐波那契数列示例
+fc fib(n) {
+    if (n <= 1) {
+        rt n
+    }
+    
+    a = fib(n - 1)
+    b = fib(n - 2)
+    rt a + b
+}

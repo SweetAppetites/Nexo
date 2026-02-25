@@ -1,0 +1,45 @@
+fc mn() {
+    // 测试 true 和 false 关键字
+    ehco("=== 测试 true 和 false 关键字 ===")
+    t = true
+    f = false
+    ehco("true 值:", t)
+    ehco("false 值:", f)
+    ehco("true == 1:", t == 1)
+    ehco("false == 0:", f == 0)
+    
+    // 测试 ! 否定符号
+    ehco("\n=== 测试 ! 否定符号 ===")
+    ehco("!true:", !t)
+    ehco("!false:", !f)
+    ehco("!1:", !1)
+    ehco("!0:", !0)
+    
+    // 测试 ++ 语法糖
+    ehco("\n=== 测试 ++ 语法糖 ===")
+    x = 5
+    ehco("初始 x:", x)
+    ehco("x++:", x++)
+    ehco("x 后:", x)
+    ehco("++x:", ++x)
+    ehco("x 后:", x)
+    
+    // 测试 -- 语法糖
+    ehco("\n=== 测试 -- 语法糖 ===")
+    y = 5
+    ehco("初始 y:", y)
+    ehco("y--:", y--)
+    ehco("y 后:", y)
+    ehco("--y:", --y)
+    ehco("y 后:", y)
+    
+    // 测试 while 循环中使用 ++
+    ehco("\n=== 测试 while 循环中使用 ++ ===")
+    idx = 0
+    wh (idx < 3) {
+        ehco("循环计数:", idx)
+        idx++
+    }
+    
+    ehco("\n所有测试完成！")
+}

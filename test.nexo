@@ -1,0 +1,55 @@
+// 测试扩展功能的程序
+fc mn() {
+    // 测试数组声明和访问
+    ehco("--- 测试数组功能 ---")
+    
+    // 声明数组
+    numbers = {1, 2, 3, 4, 5}
+    ehco("原始数组:")
+    ehco(numbers)
+    
+    // 访问数组元素
+    ehco("访问第一个元素:", numbers[0])
+    ehco("访问第二个元素:", numbers[1])
+    
+    // 修改数组元素
+    numbers[2] = 100
+    ehco("修改第三个元素后:")
+    ehco(numbers)
+    
+    // 使用数组方法
+    numbers.add(6, 7, 8)
+    ehco("添加元素后:")
+    ehco(numbers)
+    
+    numbers.del(3)
+    ehco("删除索引3的元素后:")
+    ehco(numbers)
+    
+    // 测试内置函数
+    ehco("\n--- 测试内置函数 ---")
+    
+    // 数学函数
+    ehco("绝对值: abs(-5) = ", abs({-5}))
+    ehco("平方根: sqrt(16) = ", sqrt({16}))
+    ehco("幂运算: pow(2, 3) = ", pow({2, 3}))
+    
+    // 字符串操作
+    ehco("字符串长度: len(\"hello\") = ", len({"hello"}))
+    ehco("数组长度: len(numbers) = ", len({numbers}))
+    ehco("数字转字符串: tostr(123) = ", tostr({123}))
+    
+    // 测试文件读写
+    ehco("\n--- 测试文件读写 ---")
+    
+    // 写入文件
+    write({"test.txt", "这是测试文件内容\n测试数组: ", tostr({numbers})})
+    ehco("文件写入成功")
+    
+    // 读取文件
+    content = read({"test.txt"})
+    ehco("文件内容:")
+    ehco(content)
+    
+    ehco("\n--- 所有测试完成 ---")
+}

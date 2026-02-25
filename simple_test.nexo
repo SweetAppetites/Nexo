@@ -1,0 +1,18 @@
+// 简单测试文件 - 只测试数组基本功能
+fc mn() {
+    ehco("--- 简单测试数组功能 ---")
+    
+    // 声明数组
+    numbers = {1, 2, 3, 4, 5}
+    ehco(numbers)
+    
+    // 访问数组元素
+    ehco(numbers[0])
+    ehco(numbers[1])
+    
+    // 修改数组元素
+    numbers[2] = 100
+    ehco(numbers)
+    
+    ehco("测试完成")
+}

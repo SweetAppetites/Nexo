@@ -1,0 +1,21 @@
+{
+  "name": "nexo-interpreter",
+  "version": "1.0.0",
+  "description": "An interpreter for the Nexo programming language",
+  "main": "nexo.js",
+  "scripts": {
+    "start": "node nexo.js"
+  },
+  "bin": {
+    "nexo": "nexo.js"
+  },
+  "keywords": [
+    "interpreter",
+    "programming-language"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

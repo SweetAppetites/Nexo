@@ -1,0 +1,4 @@
+fc mn(){
+    a = fin()
+    ehco(a)
+}
