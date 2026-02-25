@@ -1,0 +1,55 @@
+// calculator.nexo
+fc add(a, b) {
+    rt a + b
+}
+
+fc subtract(a, b) {
+    rt a - b
+}
+
+fc multiply(a, b) {
+    rt a * b
+}
+
+fc divide(a, b) {
+    if (b == 0) {
+        rt "错误：除数不能为 0"
+    } el {
+        rt a / b
+    }
+}
+
+fc calculator() {
+    ehco("=== 简易计算器 ===")
+    ehco("1. 加法")
+    ehco("2. 减法")
+    ehco("3. 乘法")
+    ehco("4. 除法")
+    
+    choice = finp("请选择操作 (1-4): ")
+    num1 = finp("请输入第一个数: ")
+    num2 = finp("请输入第二个数: ")
+    
+    // 转换为数字
+    num1 = num1 * 1
+    num2 = num2 * 1
+    
+    if (choice == "1") {
+        result = add(num1, num2)
+        ehco("结果:", num1, "+", num2, "=", result)
+    } el if (choice == "2") {
+        result = subtract(num1, num2)
+        ehco("结果:", num1, "-", num2, "=", result)
+    } el if (choice == "3") {
+        result = multiply(num1, num2)
+        ehco("结果:", num1, "*", num2, "=", result)
+    } el if (choice == "4") {
+        result = divide(num1, num2)
+        ehco("结果:", num1, "/", num2, "=", result)
+    } el {
+        ehco("无效的选择")
+    }
+}
+
+// 运行计算器
+calculator()

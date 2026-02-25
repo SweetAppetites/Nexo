@@ -1,4 +1,9 @@
 fc mn(){
-    a = fin()
+    a = finp("write")
     ehco(a)
+    der()
+}
+
+fc der(){
+    ehco(1)
 }
