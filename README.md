@@ -382,10 +382,6 @@ Output after running `node nexo.js`:
 执行完成！
 ```
 
-## 扩展建议 / Extension Suggestions
-
-1.使字符串操作函数名更符合Nexo风格 / 1.Make string operation function names more consistent with Nexo style
-
 ## 许可证 / License
 
 MIT
