@@ -17,6 +17,8 @@ Nexo is a concise and easy-to-use original programming language, implemented as 
 - 自增自减语法糖（++/--） / Increment/decrement syntax sugar (++/--)
 - REPL交互式环境 / REPL interactive environment
 - 单文件执行支持 / Single file execution support
+- elif 关键字支持 / elif keyword support
+- 内置数据转换函数 / Built-in data conversion functions
 
 ## 语法参考 / Syntax Reference
 
@@ -34,6 +36,17 @@ if (条件) {
     // 条件为真时执行
 } el {
     // 条件为假时执行
+}
+
+// 使用 elif 关键字
+if (条件1) {
+    // 条件1为真时执行
+} elif (条件2) {
+    // 条件1为假，条件2为真时执行
+} elif (条件3) {
+    // 条件1和条件2为假，条件3为真时执行
+} el {
+    // 所有条件都为假时执行
 }
 ```
 
@@ -114,6 +127,11 @@ low("HELLO")         // 转换为小写
 trim("  hello  ")     // 去除前后空格
 spl("a,b,c", ",")     // 拆分字符串为数组
 join(array, "-")      // 数组元素连接为字符串
+
+// 数据转换函数
+tonum("123")        // 转换为数字
+tobool(0)           // 转换为布尔值
+toarr("test")        // 转换为数组
 
 // 文件读写
 wr("file.txt", "内容")  // 写入文件
@@ -362,6 +380,41 @@ fc fib(n) {
     a = fib(n - 1)
     b = fib(n - 2)
     rt a + b
+}
+```
+
+### 4. elif 关键字示例 / elif Keyword Example
+```
+fc mn() {
+    // 测试 elif 关键字
+    num = 2
+    
+    if (num == 1) {
+        ehco("数字是 1")
+    } elif (num == 2) {
+        ehco("数字是 2")
+    } elif (num == 3) {
+        ehco("数字是 3")
+    } el {
+        ehco("数字不是 1, 2, 或 3")
+    }
+}
+```
+
+### 5. 数据转换函数示例 / Data Conversion Functions Example
+```
+fc mn() {
+    // 测试 tonum 函数
+    str_num = "123"
+    ehco("字符串转数字: " + tonum(str_num))
+    
+    // 测试 tobool 函数
+    num_0 = 0
+    ehco("数字 0 转布尔值: " + tobool(num_0))
+    
+    // 测试 toarr 函数
+    single_value = "test"
+    ehco("单个值转数组: " + toarr(single_value))
 }
 ```
 
