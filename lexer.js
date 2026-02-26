@@ -42,7 +42,7 @@ class Lexer {
     // 获取标识符或关键字
     identifier() {
         let result = '';
-        while (this.currentChar && /[a-zA-Z_\u4e00-\u9fa5]/u.test(this.currentChar)) {
+        while (this.currentChar && /[a-zA-Z0-9_\u4e00-\u9fa5]/u.test(this.currentChar)) {
             result += this.currentChar;
             this.advance();
         }

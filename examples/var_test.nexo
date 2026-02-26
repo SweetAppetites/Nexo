@@ -1,0 +1,10 @@
+fc mn() {
+    num0 = 0
+    ehco("num0: " + num0)
+    
+    num1 = 1
+    ehco("num1: " + num1)
+    
+    testVar = "test"
+    ehco("testVar: " + testVar)
+}
