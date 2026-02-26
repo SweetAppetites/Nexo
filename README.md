@@ -1,24 +1,23 @@
 # Nexo 编程语言 / Nexo Programming Language
 
+## ⚠️examples文件夹中部分代码有错误，建议参考，但不要直接运行。
+## ⚠️Some code in the examples folder may contain errors. It is recommended to use them as reference only and not run them directly.
+
 Nexo 是一种简洁易用的原创编程语言，使用 Node.js 实现的解释型语言。
 Nexo is a concise and easy-to-use original programming language, implemented as an interpreted language using Node.js.
 
 ## 语言特性 / Language Features
 
-- 简洁的函数定义语法 / Concise function definition syntax
-- 支持递归函数 / Support for recursive functions
-- 模块系统支持 / Module system support
-- 清晰的条件和循环语句 / Clear conditional and loop statements
+### 核心特性
+- 简洁直观的语法设计 / Concise and intuitive syntax design
+- 基于 Node.js 的轻量级解释器 / Lightweight interpreter based on Node.js
 - 支持中文标识符 / Support for Chinese identifiers
-- 简洁的返回语句 / Concise return statement
-- 注释支持 / Comment support
-- 布尔值支持（true/false关键字） / Boolean support (true/false keywords)
-- 逻辑非操作符（!） / Logical NOT operator (!)
-- 自增自减语法糖（++/--） / Increment/decrement syntax sugar (++/--)
-- REPL交互式环境 / REPL interactive environment
-- 单文件执行支持 / Single file execution support
-- elif 关键字支持 / elif keyword support
-- 内置数据转换函数 / Built-in data conversion functions
+
+### 独特语法
+- 简化的函数定义（`fc` 代替 `function`） / Simplified function definition (`fc` instead of `function`)
+- 简洁的返回语句（`rt` 代替 `return`） / Concise return statement (`rt` instead of `return`)
+- 简化的条件语句（`el` 代替 `else`） / Simplified conditional statements (`el` instead of `else`)
+- 独特的数组语法（`{}` 声明，`.add()` 和 `.del()` 方法） / Unique array syntax (`{}` declaration, `.add()` and `.del()` methods)
 
 ## 语法参考 / Syntax Reference
 
