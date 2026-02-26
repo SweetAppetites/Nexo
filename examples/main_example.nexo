@@ -5,8 +5,8 @@ fc mn(){
     // 调用本地函数
     an()
     
-    // 调用 eee.mof 中的函数
-    eee.sh()
+    // 调用 basic_usage.nexo 中的函数
+    basic_usage.sh()
 
     // 演示循环结构 (While Loop)
     idx = 0
@@ -15,9 +15,9 @@ fc mn(){
         idx = idx + 1
     }
 
-    // 调用 math.mof 演示递归 (证明图灵完备)
+    // 调用 mathematics.nexo 演示递归 (证明图灵完备)
     num = 5
-    res = math.fact(num)
+    res = mathematics.fact(num)
     
     output = "5 的阶乘结果是: " + res
     ehco(output)

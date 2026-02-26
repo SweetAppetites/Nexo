@@ -120,8 +120,26 @@ class Interpreter {
             return this.modules[moduleName];
         }
         
-        // 构造模块文件路径
-        const modulePath = path.join(__dirname, `${moduleName}.nexo`);
+        // 构造模块文件路径 - 检查多个可能的位置
+        const currentDir = process.cwd();
+        const possiblePaths = [
+            path.join(currentDir, `${moduleName}.nexo`),
+            path.join(__dirname, `${moduleName}.nexo`),
+            path.join(currentDir, 'examples', `${moduleName}.nexo`),
+            path.join(__dirname, 'examples', `${moduleName}.nexo`)
+        ];
+        
+        let modulePath = null;
+        for (const p of possiblePaths) {
+            if (fs.existsSync(p)) {
+                modulePath = p;
+                break;
+            }
+        }
+        
+        if (!modulePath) {
+            throw new Error(`无法找到模块 ${moduleName}`);
+        }
         
         try {
             const sourceCode = fs.readFileSync(modulePath, 'utf8');
