@@ -52,6 +52,7 @@ class Lexer {
             'fc': 'FUNCTION',
             'if': 'IF',
             'el': 'ELSE',
+            'elif': 'ELIF',
             'rt': 'RETURN',
             'wh': 'WHILE',
             'mn': 'MAIN',

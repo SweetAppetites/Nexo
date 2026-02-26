@@ -128,7 +128,7 @@ class Parser {
         return stmt;
     }
 
-    // 解析if语句：if (条件) { 代码块 } el { 代码块 }
+    // 解析if语句：if (条件) { 代码块 } elif (条件) { 代码块 } el { 代码块 }
     ifStatement() {
         this.advance(); // 跳过 'if'
         
@@ -140,10 +140,51 @@ class Parser {
         const consequent = this.blockStatement();
         
         let alternate = null;
+        let currentIf = null;
+        
+        // 处理 elif 分支
+        while (this.currentToken && this.currentToken.type === 'ELIF') {
+            this.advance(); // 跳过 'elif'
+            
+            this.match('LPAREN'); // 匹配 '('
+            const elifCondition = this.expression();
+            this.match('RPAREN'); // 匹配 ')'
+            
+            this.match('LBRACE'); // 匹配 '{'
+            const elifConsequent = this.blockStatement();
+            
+            // 创建新的 IfStatement
+            const newIf = {
+                type: 'IfStatement',
+                condition: elifCondition,
+                consequent: elifConsequent,
+                alternate: null
+            };
+            
+            if (!alternate) {
+                // 第一个 elif 作为初始 if 的 alternate
+                alternate = newIf;
+                currentIf = newIf;
+            } else {
+                // 后续的 elif 作为前一个 if 的 alternate
+                currentIf.alternate = newIf;
+                currentIf = newIf;
+            }
+        }
+        
+        // 处理 else 分支
         if (this.currentToken && this.currentToken.type === 'ELSE') {
             this.advance(); // 跳过 'el'
             this.match('LBRACE'); // 匹配 '{'
-            alternate = this.blockStatement();
+            const elseBlock = this.blockStatement();
+            
+            if (currentIf) {
+                // 如果有 elif 分支，else 作为最后一个 elif 的 alternate
+                currentIf.alternate = elseBlock;
+            } else {
+                // 如果没有 elif 分支，else 作为初始 if 的 alternate
+                alternate = elseBlock;
+            }
         }
         
         return {

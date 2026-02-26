@@ -266,10 +266,20 @@ class Interpreter {
                 }
             }
         } else if (node.alternate) {
-            for (const statement of node.alternate) {
-                const result = this.execute(statement, scope);
+            // 检查 alternate 是 IfStatement 对象还是语句数组
+            if (node.alternate.type === 'IfStatement') {
+                // 递归执行嵌套的 if 语句
+                const result = this.executeIfStatement(node.alternate, scope);
                 if (result && result.type === 'RETURN_VALUE') {
                     return result;
+                }
+            } else {
+                // 执行 else 分支的语句数组
+                for (const statement of node.alternate) {
+                    const result = this.execute(statement, scope);
+                    if (result && result.type === 'RETURN_VALUE') {
+                        return result;
+                    }
                 }
             }
         }

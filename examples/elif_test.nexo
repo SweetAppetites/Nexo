@@ -1,0 +1,50 @@
+fc mn() {
+    ehco("=== 测试 elif 关键字 ===")
+    
+    // 测试基本的 if-elif-else 结构
+    num = 2
+    ehco("测试数字: " + num)
+    
+    if (num == 1) {
+        ehco("数字是 1")
+    } elif (num == 2) {
+        ehco("数字是 2")
+    } elif (num == 3) {
+        ehco("数字是 3")
+    } el {
+        ehco("数字不是 1, 2, 或 3")
+    }
+    
+    // 测试多个 elif 分支
+    grade = 85
+    ehco("\n测试分数: " + grade)
+    
+    if (grade >= 90) {
+        ehco("优秀")
+    } elif (grade >= 80) {
+        ehco("良好")
+    } elif (grade >= 70) {
+        ehco("中等")
+    } elif (grade >= 60) {
+        ehco("及格")
+    } el {
+        ehco("不及格")
+    }
+    
+    // 测试嵌套的 if-elif-else
+    age = 15
+    ehco("\n测试年龄: " + age)
+    
+    if (age < 18) {
+        ehco("未成年人")
+        if (age < 13) {
+            ehco("儿童")
+        } elif (age < 16) {
+            ehco("青少年")
+        } el {
+            ehco("青少年晚期")
+        }
+    } el {
+        ehco("成年人")
+    }
+}
