@@ -27,6 +27,22 @@ class Interpreter {
                 return typeof arg === 'string' || Array.isArray(arg) ? arg.length : 0;
             },
             tostr: (arg) => String(arg),
+            
+            // 数据转换函数
+            tonum: (arg) => {
+                const num = Number(arg);
+                return isNaN(num) ? 0 : num;
+            },
+            tobool: (arg) => Boolean(arg),
+            toarr: (arg) => {
+                if (Array.isArray(arg)) {
+                    return arg;
+                } else if (arg === undefined || arg === null) {
+                    return [];
+                } else {
+                    return [arg];
+                }
+            },
             // 新增字符串操作函数
             sub: (str, start, length) => {
                 return typeof str === 'string' ? str.substr(start, length) : '';

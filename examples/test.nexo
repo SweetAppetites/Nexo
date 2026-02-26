@@ -1,0 +1,8 @@
+fc mn(){
+    mode = finp("请输入模式（1加）：")
+    if (tonum(mode) == 1){
+        aNum = fin()
+        bNum = fin()
+        ehco(tonum(aNum) + tonum(bNum))
+    }
+}

@@ -1,0 +1,51 @@
+fc mn() {
+    // 测试 tonum 函数
+    ehco("=== 测试 tonum 函数 ===")
+    strNum = "123"
+    ehco("字符串转数字: " + tonum(strNum))
+    
+    strNonNum = "abc"
+    ehco("非数字字符串转数字: " + tonum(strNonNum))
+    
+    boolTrue = true
+    ehco("布尔值 true 转数字: " + tonum(boolTrue))
+    
+    boolFalse = false
+    ehco("布尔值 false 转数字: " + tonum(boolFalse))
+    
+    // 测试 tobool 函数
+    ehco("\n=== 测试 tobool 函数 ===")
+    num0 = 0
+    ehco("数字 0 转布尔值: " + tobool(num0))
+    
+    num1 = 1
+    ehco("数字 1 转布尔值: " + tobool(num1))
+    
+    emptyStr = ""
+    ehco("空字符串转布尔值: " + tobool(emptyStr))
+    
+    nonEmptyStr = "hello"
+    ehco("非空字符串转布尔值: " + tobool(nonEmptyStr))
+    
+    // 测试 toarr 函数
+    ehco("\n=== 测试 toarr 函数 ===")
+    singleValue = "test"
+    ehco("单个值转数组: " + toarr(singleValue))
+    
+    existingArray = {1, 2, 3}
+    ehco("已有数组转数组: " + toarr(existingArray))
+    
+    // 测试实际应用场景
+    ehco("\n=== 测试实际应用场景 ===")
+    mode = finp("请输入模式（1加）：")
+    ehco("输入的模式（原始）: " + mode)
+    ehco("输入的模式（转换后）: " + tonum(mode))
+    
+    if (tonum(mode) == 1) {
+        aNum = fin()
+        bNum = fin()
+        ehco("输入的第一个数（原始）: " + aNum)
+        ehco("输入的第二个数（原始）: " + bNum)
+        ehco("两数之和: " + (tonum(aNum) + tonum(bNum)))
+    }
+}
